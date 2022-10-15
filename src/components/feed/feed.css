@@ -1,0 +1,6 @@
+.feedbar{
+    flex: 5.5;
+    height: 90vh;
+    margin-top: 15px;
+    overflow-y: scroll;
+}
