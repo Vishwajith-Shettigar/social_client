@@ -2,15 +2,16 @@ import React from 'react'
 import "./topbar.css"
 import { Chat, NotificationAdd, Person, Search } from '@mui/icons-material'
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import {Link} from "react-router-dom"
 function Topbar() {
   return (
     <div className='topbarContainer'>
 
 
       <div className="topbarleft">
-
+<Link to={"/"}style={{textDecoration:"none"}} >
         <span className='logo'>Dont befraid</span>
-
+</Link>
       </div>
       <div className="topbarcenter">
         <div className="searchbar">
@@ -44,7 +45,7 @@ function Topbar() {
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
-        <img src="./assets/person/1.jpeg" alt="" className="topbarImage" />
+        <img src="/assets/person/1.jpeg" alt="" className="topbarImage" />
       </div>
     </div>
 
