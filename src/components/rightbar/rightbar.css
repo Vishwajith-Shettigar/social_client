@@ -108,3 +108,18 @@ padding: 20px 20px 0px 10px ;
     border-radius: 5px;
 
 }
+
+.rightbarFollowButton{
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    background-color: rgb(127, 150, 246);
+    color: white;
+    border-radius: 3px;
+    display: flex;
+    padding: 5px 10px;
+    border: none;
+    width: 100px;
+    cursor: pointer;
+}

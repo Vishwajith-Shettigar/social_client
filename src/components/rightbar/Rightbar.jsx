@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./rightbar.css"
 import {Users} from "../../dummyData"
 import Online from '../online/Online'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { AuthContext } from '../../context/AuthContext'
+import { Add } from '@mui/icons-material'
 function Rightbar({user}) {
 
+const PF=process.env.REACT_APP_PUBLIC_FOLDER
+  
+const{user:currentUser}=useContext(AuthContext);
+
+const handleFollow=async()=>{
+try{
+
+}catch(e)
+{
+  
+}
+  
+}
  const  HomeRightbar=()=>{
+
 
     return(
       <>
@@ -30,8 +48,38 @@ function Rightbar({user}) {
 
   const ProfileRightbar=()=>{
 
+
+
+const [friends,setFriends]=useState([]);
+
+  useEffect(()=>{
+
+   const getFriends= async()=>{
+
+     try{
+ const friendList=await axios.get("/user/friends/"+user._id)
+ setFriends(friendList.data)
+     }catch(e)
+     {
+
+     }
+   }
+
+   getFriends()
+
+  },[user._id])
+
+console.log(friends)
+
     return(
       <>
+      {user.username!=currentUser.username && (
+ <button className='rightbarFollowButton' onClick={handleFollow}>
+  Follow
+  <Add/>
+ </button>
+
+      )}
       <h4 className='rightbarTitle'>User information </h4>
       <div className="rightbarInfo">
         <div className="rightbarInfoItem">
@@ -44,42 +92,29 @@ function Rightbar({user}) {
         </div>
         <div className="rightbarInfoItem">
           <span className="rightbarInfoKey">Relationship</span>
-          <span className="rightbarInfoValue"> {user.relationship==1?"single" :user.relationship==2? "married" :"---"}</span>
+          <span className="rightbarInfoValue"> {user.relationship===1?"single" :user.relationship===2? "married" :"---"}</span>
         </div>
        
       </div>
 
       <h4 className='rightbarTitle'>User friends </h4>
       <div className="rightbarFollowings">
-        <div className="rightbarFollowing">
-          <img src="/assets/person/1.jpeg" alt="" className="rightbarFollowingImg" />
-          <span className="rightbarFollowingName">Joe deon</span>
-        </div>
 
-        <div className="rightbarFollowing">
-          <img src="/assets/person/4.jpg" alt="" className="rightbarFollowingImg" />
-          <span className="rightbarFollowingName">Joe deon</span>
-        </div>
+       {
+       friends.map((friend)=>(
+          <Link to={`/profile/${friend.username}` } style={{textDecoration:"none"}}>
 
-        <div className="rightbarFollowing">
-          <img src="/assets/person/2.jpeg" alt="" className="rightbarFollowingImg" />
-          <span className="rightbarFollowingName">Joe deon</span>
+          <div className="rightbarFollowing" style={{alignItems:"center",justifyContent:"center"}}>
+          <img src={friend.profilePicture? PF+"/person/"+friend.profilePicture: PF+"/person/noAvatar.png"} alt="" className="rightbarFollowingImg" />
+          <span className="rightbarFollowingName">{friend.username}</span>
         </div>
+        </Link>
+       ))
+     
+        
+        }
 
-        <div className="rightbarFollowing">
-          <img src="/assets/person/3.jpeg" alt="" className="rightbarFollowingImg" />
-          <span className="rightbarFollowingName">Joe deon</span>
-        </div>
-
-        <div className="rightbarFollowing">
-          <img src="/assets/person/1.jpeg" alt="" className="rightbarFollowingImg" />
-          <span className="rightbarFollowingName">Joe deon</span>
-        </div>
-
-        <div className="rightbarFollowing">
-          <img src="/assets/person/2.jpeg" alt="" className="rightbarFollowingImg" />
-          <span className="rightbarFollowingName">Joe deon</span>
-        </div>
+       
       </div>
       </>
     )

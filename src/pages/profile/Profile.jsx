@@ -41,9 +41,9 @@ const params=useParams();
 
       <div className="profileRightTop">
 <div className="profileCover">
-  <img className='profileCoverImg' src={user.coverPicture || PF+"person/noCover.png"}/>
+  <img className='profileCoverImg' src={user.coverPicture? PF+"/person/"+user.coverPicture: PF+"/person/noCover.png"}/>
         
-        <img className='profileUserImg' src={user.profilePicture || PF+"person/noAvatar.png"}/>
+        <img className='profileUserImg' src={user.profilePicture? PF+"/person/"+user.profilePicture : PF+"/person/noAvatar.png"}/>
 </div>
 <div className="profileInfo">
   <h4 className='profileInfoName'>{user.username}</h4>
