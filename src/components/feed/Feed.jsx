@@ -6,7 +6,7 @@ import  axios  from 'axios'
 import { AuthContext } from '../../context/AuthContext'
 // import {Posts} from "../../dummyData"
 function Feed({username}) {
- console.log(username)
+
   const [posts,setPosts]=useState();
 const {user}=useContext(AuthContext);
 
@@ -34,7 +34,7 @@ if(posts)
     <div className='feedbar'>
 
       <div className="feedWrapper">
-      { username===user.username&&<Share/>}
+      { (!username || username===user.username)&&<Share/>}
         <>
         {posts.map((p)=>(
 <Post key={p._id} post={p}/>  

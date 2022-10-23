@@ -20,3 +20,16 @@ export const LoginFailure=(error)=>({
     
 
 })
+
+
+export const Follow=(userid)=>({
+
+    type:"FOLLOW",
+    payload:userid
+})
+
+export const UnFollow=(userid)=>({
+
+    type:"UNFOLLOW",
+    payload:userid
+})

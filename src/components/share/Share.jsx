@@ -1,4 +1,4 @@
-import { EmojiEmotions, Label, PermMedia, Room } from '@mui/icons-material'
+import { Cancel, EmojiEmotions, Label, PermMedia, Room } from '@mui/icons-material'
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import "./share.css"
@@ -55,6 +55,17 @@ window.location.reload()
 
                 </div>
                 <hr className="shareHr" />
+                {
+                    file &&(
+
+                        <div className="shareImgContainer">
+                            <img src={URL.createObjectURL(file)} alt="" className="shareImg" />
+                            <Cancel className='shareCancelImg'  onClick={()=>{setFile(null)}}/>
+                        </div>
+                        
+                    )
+                }
+               
                 <form onSubmit={handleSubmit} className="shareBottom">
                     <div className="shareOptions">
 
@@ -77,8 +88,11 @@ window.location.reload()
                         </div>
                     </div>
                     <button type="submit" className='shareButton'>Share</button>
-            </form>
-        </div>
+               
+            </form>  
+             
+        </div> 
+       
         </div >
     )
 }
