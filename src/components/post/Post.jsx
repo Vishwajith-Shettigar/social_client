@@ -13,15 +13,16 @@ const {user:currentUser}=useContext(AuthContext);
 
 useEffect(()=>{
 
-  setIsLike(post.likes.includes(currentUser._id.$oid))
+  setIsLike(post.likes.includes(currentUser._id))
 
-},[currentUser._id.$oid,post.likes])
+},[currentUser._id,post.likes])
 
 
 useEffect( ()=>{
   
 const fetchUser=async()=>{
   console.log(post.userid)
+
 const res=  await axios.get(`/user?userid=${post.userid}`)
 
   setUser(res.data);
@@ -39,7 +40,7 @@ fetchUser();
 
   const handleLike=()=>{
 try{
- axios.put("/post/"+post._id+"/like",{userid:currentUser._id.$oid})
+ axios.put("/post/"+post._id+"/like",{userid:currentUser._id})
 
 }catch(e)
 {

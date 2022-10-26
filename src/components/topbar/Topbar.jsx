@@ -40,8 +40,10 @@ const PF=process.env.REACT_APP_PUBLIC_FOLDER;
             <span className="topbarIconBadge">1</span>
           </div>
           <div className="topbariconItem">
-
-            <Chat/>
+<Link to="/messenger" style={{color:"white", textDecoration:"none"}}>
+    <Chat/>
+</Link>
+          
             <span className="topbarIconBadge">1</span>
           </div>
           <div className="topbariconItem">

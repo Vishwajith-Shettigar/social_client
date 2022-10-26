@@ -12,7 +12,7 @@ function Share() {
 const handleSubmit=async(e)=>{
     e.preventDefault();
     const newPost={
-        userid:user._id.$oid,
+        userid:user._id,
         desc:desc.current.value
     }
     if(file){
@@ -51,7 +51,7 @@ window.location.reload()
             <div className="shareWrapper">
                 <div className="shareTop">
                     <img className='shareProfileImg' src={user.profilePicture ? PF+"/person/"+ user.profilePicture : PF + "/person/noAvatar.png"} />
-                    <input type="text" placeholder='Whats in your mind ?' className="shareInput" ref={desc} />
+                    <textarea type="text" placeholder='Whats in your mind ?' className="shareInput" ref={desc} />
 
                 </div>
                 <hr className="shareHr" />

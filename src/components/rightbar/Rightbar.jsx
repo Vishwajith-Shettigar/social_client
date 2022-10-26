@@ -49,10 +49,10 @@ const{user:currentUser,dispatch}=useContext(AuthContext);
       
        if(!followed){
         dispatch({type:"FOLLOW",payload:user._id})
-        await axios.put("/user/"+user._id+"/follow",{userid:currentUser._id.$oid})
+        await axios.put("/user/"+user._id+"/follow",{userid:currentUser._id})
        }else{
         dispatch({type:"UNFOLLOW",payload:user._id})
-        await axios.put("/user/"+user._id+"/unfollow",{userid:currentUser._id.$oid})
+        await axios.put("/user/"+user._id+"/unfollow",{userid:currentUser._id})
       
        }
       }catch(e)

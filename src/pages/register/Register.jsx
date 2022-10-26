@@ -57,7 +57,7 @@ catch(e){
             <input required type="password" ref={password} placeholder='Password' className="loginInput" />
             <input required type="password" ref={comPassword} placeholder='Confirm password' className="loginInput" />
  <button type='submit' className="loginButton">Sign up</button>
- <button className="loginRegister">Log in</button>
+ <button className="loginRegister" onClick={()=> navigate("/login")}>Log in</button>
         </form>
     </div>
 </div>

@@ -13,10 +13,10 @@ const {user}=useContext(AuthContext);
   useEffect( ()=>{
     
  const fetchPosts=async()=>{
- 
+ console.log()
   const res=  username
    ? await axios.get("/post/profile/"+username)
-   : await axios.get(`/post/timeline/${user._id.$oid}`)
+   : await axios.get(`/post/timeline/${user._id}`)
 
     setPosts(res.data.sort((p1,p2)=>{
       return new Date(p2.createdAt)- new Date(p1.createdAt);
@@ -27,7 +27,7 @@ const {user}=useContext(AuthContext);
     
 fetchPosts();
 
-  },[username,user._id.$oid])
+  },[username,user._id])
 
 if(posts)
   return (
@@ -36,10 +36,13 @@ if(posts)
       <div className="feedWrapper">
       { (!username || username===user.username)&&<Share/>}
         <>
-        {posts.map((p)=>(
+        {
+        posts ?posts.map((p)=>(
 <Post key={p._id} post={p}/>  
 
-        ))}
+        )) : <></>
+        
+        }
         </>
         
       </div>

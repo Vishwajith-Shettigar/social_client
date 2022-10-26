@@ -44,6 +44,12 @@
 
 }
 
+.postText{
+    max-width: 300px;
+word-break: break-all;
+white-space: pre-wrap;
+}
+
 .postImg{
     width: 100%;
     margin-top: 20px;

@@ -9,12 +9,14 @@
 .shareWrapper{
     padding: 10px;
 
+
 }
 
 .shareTop{
 
    display: flex;
    align-items: center; 
+ 
 }
 .shareProfileImg{
     width: 50px;
@@ -26,7 +28,15 @@
 
 .shareInput{
     border: none;
-    width: 80%;
+    width: 90%;
+   max-width: 90%;
+   word-wrap: break-word;
+        word-break: break-all;
+        white-space: pre-wrap;
+       
+        max-height: fit-content;
+        overflow-x: auto;
+
 
 }
 
