@@ -1,4 +1,4 @@
-import { MoreVert } from '@mui/icons-material'
+import { DeleteForeverSharp, MoreVert, ReplySharp, ShapeLine, Share, ShareOutlined } from '@mui/icons-material'
 import React, { useState,useEffect, useContext } from 'react'
 import "./post.css"
 import axios  from "axios"
@@ -6,10 +6,26 @@ import {format} from 'timeago.js'
 import {Users} from "../../dummyData"
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
-function Post({post}) {
+function Post({post,owner}) {
 const PF=process.env.REACT_APP_PUBLIC_FOLDER;
 const [user,setUser]=useState({});
 const {user:currentUser}=useContext(AuthContext);
+const [showMoreoptions,setShowMoreOptions]=useState(false);
+
+// console.log(owner)
+
+const deletePost=async(postId,userId)=>{
+
+   const res=await axios.post("/post/"+postId,{userid:userId});
+   window.location.reload(true);
+
+}
+
+const showMore=()=>{
+
+  setShowMoreOptions(!showMoreoptions);
+  console.log(showMoreoptions)
+}
 
 useEffect(()=>{
 
@@ -55,15 +71,42 @@ if(user)
 <div className="postWrapper">
       <div className="postTop">
 <div className="postTopLeft">
-<Link to={`profile/${user.username}`}>
-  <img className='postProfileImg' src={user.profilePicture? PF+"/person/"+user.profilePicture :PF+"/person/noAvatar.png"}/>
+
+
+
+  <Link to={`profile/${post.anonymous?"anonymous": user.username}`}>
+
+
+
+  <img className='postProfileImg' src={!post.anonymous? user.profilePicture? PF+"/person/"+user.profilePicture :PF+"/person/noAvatar.png": PF+"/person/noAvatar.png"}/>
  </Link>
 
-  <span className="postUserName">{user.username}</span>
+  <span className="postUserName">{!post.anonymous? user.username:"Anonymous"}</span>
   <span className="postDate">{format(post.createdAt)}</span> 
 </div>
 <div className="postTopRight">
-  <MoreVert/>
+  <MoreVert className="threedot" onClick={showMore}/>
+  {
+    showMoreoptions?  owner==false ? (
+
+      <div className="sharepostOptions">
+       
+        <ShareOutlined className="sharePostOptionsicons"/>
+      </div>
+      
+    )
+    :(
+    
+    
+    <div className="sharepostOptions">
+    <ShareOutlined className="sharePostOptionsicons"/>
+    <DeleteForeverSharp className="sharePostOptionsicons" onClick={()=>deletePost(post._id,currentUser._id)}/>
+    </div>
+    
+    ):
+    
+    <></>
+  }
 </div>
       </div>
       <div className="postCenter">

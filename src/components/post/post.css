@@ -87,3 +87,26 @@ white-space: pre-wrap;
     border-bottom: 1px dashed gray;
     font-size: 15px;
 }
+
+.postTopRight{
+    position: relative;
+}
+
+
+.sharepostOptions{
+    display: flex;
+   
+   padding-top: 5px;
+   position: absolute;
+   top: 10;
+   right:0;
+   z-index: 1;
+ 
+
+}
+
+.sharePostOptionsicons{
+    padding-right:15px;
+}
+
+

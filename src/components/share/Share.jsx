@@ -1,4 +1,4 @@
-import { Cancel, EmojiEmotions, Label, PermMedia, Room } from '@mui/icons-material'
+import { Cancel, EmojiEmotions, Label, NoAccountsOutlined, PermMedia, Room } from '@mui/icons-material'
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import "./share.css"
@@ -8,12 +8,25 @@ function Share() {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const { user } = useContext(AuthContext);
     const [file, setFile] = useState(null);
+    const [Anonymous,setAnonymous] = useState(false)
+
+  
     const desc = useRef();
+
+    const Anonymoushandle=()=>{
+        setAnonymous(!Anonymous)
+    }
+
 const handleSubmit=async(e)=>{
+    
     e.preventDefault();
+if(desc.current.value){
+  
+    
     const newPost={
         userid:user._id,
-        desc:desc.current.value
+        desc:desc.current.value,
+        anonymous:Anonymous
     }
     if(file){
         console.log(file)
@@ -45,6 +58,10 @@ window.location.reload()
 
     }
 }
+else{
+    window.alert("write")
+}
+}
 
     return (
         <div className='share'>
@@ -74,14 +91,11 @@ window.location.reload()
                             <span className="shareOptionText">Photo or video</span>
                             <input style={{ display: "none" }} id="file" type="file" accept=".png,.jpeg,.jpg,.mp4" onChange={(e) => { setFile(e.target.files[0]) }} />
                         </label>
-                        <div className="shareOption">
-                            <Label htmlColor='blue' className='shareIcon' />
-                            <span className="shareOptionText">Tag</span>
+                        <div contenteditable="true"  className={Anonymous? "shareOption anonymousOption":"shareOption"}  onClick={Anonymoushandle}>
+                            <NoAccountsOutlined htmlColor='blue' contenteditable="false" className='shareIcon' />
+                            <span contenteditable="false" className="shareOptionText">Anonymous</span>
                         </div>
-                        <div className="shareOption">
-                            <Room htmlColor='green' className='shareIcon' />
-                            <span className="shareOptionText">Location</span>
-                        </div>
+                       
                         <div className="shareOption">
                             <EmojiEmotions htmlColor='goldenrod' className='shareIcon' />
                             <span className="shareOptionText">Feelings</span>

@@ -38,7 +38,8 @@ if(posts)
         <>
         {
         posts ?posts.map((p)=>(
-<Post key={p._id} post={p}/>  
+          ( username && p.anonymous? username!=user.username?true:false:false)?<></>:
+<Post key={p._id} post={p} owner={(username===user.username)} />  
 
         )) : <></>
         
