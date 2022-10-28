@@ -6,13 +6,16 @@ import {format} from 'timeago.js'
 import {Users} from "../../dummyData"
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
+import Comment from '../comment/Comment'
 function Post({post,owner}) {
 const PF=process.env.REACT_APP_PUBLIC_FOLDER;
 const [user,setUser]=useState({});
 const {user:currentUser}=useContext(AuthContext);
 const [showMoreoptions,setShowMoreOptions]=useState(false);
+const [showComment,setShowComment]=useState(false);
 
-// console.log(owner)
+
+
 
 const deletePost=async(postId,userId)=>{
 
@@ -65,6 +68,8 @@ try{
     setLike(isLike?like-1:like+1);
     setIsLike(!isLike);
   }
+
+
 if(user)
   return (
     <div className='post'>
@@ -109,7 +114,7 @@ if(user)
   }
 </div>
       </div>
-      <div className="postCenter">
+      <div className="postCenter" >
 <span className="postText">{post?.desc}</span>
 <img src={PF+"/post/"+post.img} alt="" className="postImg" />
       </div>
@@ -121,10 +126,13 @@ if(user)
 <span className="postLikeCounter">{like}</span>
         </div>
         <div className="postBottomRight">
-          <span className="postCommentText">{post.comment} comments</span>
+          <span className="postCommentText" onClick={()=>{setShowComment(!showComment)}}>{post.comments.length} comments</span>
+         
 
         </div>
+       
       </div>
+   { showComment? <Comment comment={post.comments} postid={post._id}  postUserid={post.userid}/>:<></>}
     </div>
     </div>
   )
