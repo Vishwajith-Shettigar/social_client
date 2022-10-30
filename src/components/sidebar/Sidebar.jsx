@@ -2,8 +2,26 @@ import { Bookmark, Chat, Event, Group, HelpOutline, PlayArrow, PlayCircleFilledO
 import React from 'react'
 import Closefriend from '../closefriend/Closefriend'
 import "./sidebar.css"
-import {Users} from "../../dummyData"
+import { AuthContext } from '../../context/AuthContext'
+import {useState,useEffect,useContext} from 'react'
+import axios from 'axios'
 function Sidebar() {
+const {user}=useContext(AuthContext)
+   
+const [recomUsers,setRecomusers]=useState([]);
+
+useEffect(()=>{
+    const getRecom=async()=>{
+
+
+        const res=await axios.get("/user/getuserrecom/"+user._id);
+       
+        setRecomusers(res.data)
+
+    }
+getRecom();
+},[user])
+
     return (
         <div className='sidebar'>
 
@@ -61,8 +79,8 @@ function Sidebar() {
                 <ur className="sidebarfriendList">
                   {
 
-                    Users.map((u)=>(
-                         <Closefriend key={u.id} user={u}/>
+                    recomUsers.map((u)=>(
+                         <Closefriend key={u._id} user={u}/>
                     ))
                   }
                     

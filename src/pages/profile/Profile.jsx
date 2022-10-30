@@ -34,7 +34,7 @@ const params=useParams();
   fetchUser();
 }
   },[params.username])
-
+  
   return (
     <>
     <Topbar/>
@@ -69,6 +69,7 @@ const params=useParams();
     </div>
  </>
   )
-}
+     }
+
 
 export default Profile
