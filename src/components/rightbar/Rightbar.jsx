@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { AuthContext } from '../../context/AuthContext'
 import { Add, Remove } from '@mui/icons-material'
-function Rightbar({user}) {
+function Rightbar({user,homeOnlineusers}) {
 
 const PF=process.env.REACT_APP_PUBLIC_FOLDER
   
@@ -18,7 +18,7 @@ const{user:currentUser,dispatch}=useContext(AuthContext);
 
 
  const  HomeRightbar=()=>{
-
+console.log(homeOnlineusers)
 
     return(
       <>
@@ -31,8 +31,8 @@ const{user:currentUser,dispatch}=useContext(AuthContext);
 
   <ul className="rightbarFriendList">
    
- {  Users.map((u)=>(
-     <Online key={u.id} user={u}/>
+ {  homeOnlineusers.map((u)=>(
+     <Online key={u} userOnline={u}/>
    ))
   }
   

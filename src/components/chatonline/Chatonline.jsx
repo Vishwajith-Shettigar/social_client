@@ -44,9 +44,11 @@ const handleClick=async(user)=>{
     try{
 
         const res=await axios.get("/conversation/find/"+currentId+"/"+user._id)
+      
         setCurrentChat(res.data);
     }catch(e)
     {
+console.log(e)
 
     }
 

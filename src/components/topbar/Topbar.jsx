@@ -53,7 +53,7 @@ const PF=process.env.REACT_APP_PUBLIC_FOLDER;
           </div>
         </div>
         <Link to={`/profile/${user.username}`}>
-         <img src={user.profilePicture ? PF+"/person/"+user.profilePicture:PF+"person/noAvatar.png"} alt="" className="topbarImage" />
+         <img src={user.profilePicture ? PF+"/person/"+user.profilePicture:PF+"/person/noAvatar.png"} alt="" className="topbarImage" />
         </Link>
        
       </div>

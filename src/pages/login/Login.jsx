@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 import { CircularProgress, circularProgressClasses } from '@mui/material';
 import { CircleOutlined } from '@mui/icons-material';
 
-function Login() {
+function Login({setJwtToken}) {
 const {user,isFetching,error,dispatch}=useContext(AuthContext);
 
     const email= useRef();
@@ -15,7 +15,7 @@ const {user,isFetching,error,dispatch}=useContext(AuthContext);
     const handleLogin=(e)=>{
  e.preventDefault();
 console.log(email.current.value,password.current.value)
-loginCall({email:email.current.value,password:password.current.value},dispatch)
+loginCall({email:email.current.value,password:password.current.value},dispatch,setJwtToken)
     }
     console.log(user)
   return (

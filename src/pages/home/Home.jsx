@@ -5,7 +5,7 @@ import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Rightbar from '../../components/rightbar/Rightbar';
 import Feed from '../../components/feed/Feed';
-function Home() {
+function Home({homeOnlineusers}) {
   return (
     <>
    <Topbar/>
@@ -14,7 +14,7 @@ function Home() {
    
    <Sidebar/>
    <Feed/>
-   <Rightbar/>
+   <Rightbar homeOnlineusers={homeOnlineusers}/>
    </div>
 </>
   )

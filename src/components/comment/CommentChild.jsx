@@ -36,7 +36,7 @@ commentid:commentsNow._id
        
         const fetchuser = async() => {
 //  console.log(comment.userid);
-            const res = await axios.get(`/user?userid=${c.userid}`)
+            const res = await axios.get(`/user?userid=${commentsNow.userid}`)
             setCommentUser(res.data);
             
         }
@@ -49,7 +49,7 @@ commentid:commentsNow._id
      <div className="commentBoxComment">
                 <img className="commentUserImg" src={commentUser.profilePicture? PF + "/person/"+commentUser.profilePicture: PF + "/person/noAvatar.png"}></img>
                 <div className="commentBoxUserInfo">
-                    <span className="commentUsername">{commentUser?.username}</span>
+                    <span className="commentUsername">{  commentUser?.username}</span>
                     <span className="comment">{commentsNow?.text}</span>
 
 

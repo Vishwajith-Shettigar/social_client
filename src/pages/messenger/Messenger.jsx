@@ -7,7 +7,7 @@ import Topbar from '../../components/topbar/Topbar'
 import { AuthContext } from '../../context/AuthContext'
 import {io} from "socket.io-client"
 import "./messenger.css"
-function Messenger() {
+function Messenger({socket}) {
     const [conversations,setConversations]=useState([]);
   const [currentChat,setCurrentChat]=useState(null);
   const [messeges,setMesseges]=useState(null);
@@ -15,13 +15,15 @@ function Messenger() {
 const [onlineUsers,setOnlineUsers]=useState()
 const [arrivalMessage,setArrivalMessage]=useState(null)
 
-const socket=useRef();
+// const socket=useRef();
 const scrollRef=useRef();
     const {user}=useContext(AuthContext);
 
 useEffect(()=>{
-socket.current=io("ws://localhost:8900");
+
 socket.current.on("getMessage",(data)=>{
+    console.log("meeaewafe")
+    console.log(data)
     setArrivalMessage({
         sender:data.senderId,
         text:data.text,
