@@ -5,16 +5,22 @@ import Topbar from '../../components/topbar/Topbar';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Rightbar from '../../components/rightbar/Rightbar';
 import Feed from '../../components/feed/Feed';
-function Home({homeOnlineusers}) {
+import Globalchat from '../../components/globalChat/Globalchat';
+function Home({homeOnlineusers,isGlobal,setIsglobal,}) {
   return (
     <>
    <Topbar/>
    <div className='homeContainer'>
 
    
-   <Sidebar/>
-   <Feed/>
-   <Rightbar homeOnlineusers={homeOnlineusers}/>
+   <Sidebar isGlobal={isGlobal} setIsglobal={setIsglobal}/>
+
+  { 
+  isGlobal?<Globalchat/>:
+  <Feed/>
+  
+  }
+   <Rightbar homeOnlineusers={homeOnlineusers} />
    </div>
 </>
   )

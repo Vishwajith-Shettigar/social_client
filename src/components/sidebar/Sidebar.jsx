@@ -2,10 +2,11 @@ import { Bookmark, Chat, Event, Group, HelpOutline, PlayArrow, PlayCircleFilledO
 import React from 'react'
 import Closefriend from '../closefriend/Closefriend'
 import "./sidebar.css"
+import {Link} from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import {useState,useEffect,useContext} from 'react'
 import axios from 'axios'
-function Sidebar() {
+function Sidebar({isGlobal,setIsglobal}) {
 const {user}=useContext(AuthContext)
    
 const [recomUsers,setRecomusers]=useState([]);
@@ -38,10 +39,11 @@ getRecom();
                         <Chat className='sidebarIcon' />
                         <span className='sidebarListItemText'>Chats</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li onClick={()=>setIsglobal(!isGlobal)} className="sidebarListItem">
 
                         <PlayCircleFilledOutlined className='sidebarIcon' />
-                        <span className='sidebarListItemText'>Videos</span>
+                        <span className='sidebarListItemText'>Global chat</span>
+                  
                     </li>
                     <li className="sidebarListItem">
 

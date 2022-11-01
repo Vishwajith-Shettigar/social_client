@@ -14,6 +14,7 @@ import {io} from "socket.io-client"
 
 
 function App() {
+  const [isGlobal,setIsglobal]=useState(false);
 
   const [homeOnlineusers,setHomeOnlineUsers]=useState([]);
   const socket=useRef();
@@ -70,12 +71,13 @@ const getUser=async()=>{
     <Router>
 <Routes>
 
-  <Route exact path="/" element={user?<Home homeOnlineusers={homeOnlineusers} />:<Register/>}></Route>
+  <Route exact path="/" element={user?<Home homeOnlineusers={homeOnlineusers} isGlobal={isGlobal} setIsglobal={setIsglobal} />:<Register/>}></Route>
   <Route path="/login" element={user? <Navigate to="/"/> :<Login setJwtToken={setJwtToken}/>}></Route>
   <Route path="/register" element={user?<Navigate to="/"/> : <Register/>}></Route>
   <Route path="/messenger" element={!user?<Navigate to="/"/> : <Messenger socket={socket}/>}></Route>
 <Route path="/comment" element={ <Comment/>}></Route>
   <Route path="/profile/:username" element={<Profile/>}></Route>
+ 
 </Routes>
     </Router>
     
