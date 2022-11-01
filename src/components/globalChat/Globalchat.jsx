@@ -12,14 +12,13 @@ function Globalchat() {
     
     const [arrivalMessage,setArrivalMessage]=useState([]);
     const {user}=useContext(AuthContext);
-    const [lol,setLol]=useState(false);
+
     useEffect( ()=>{
         globalSocket.current=io("ws://localhost:8000");
 const getSavesMesssages=async()=>{
 
 const res= await axios.get("/globalm/");
-console.log("------------------------")
-console.log(res.data)
+
 setMesseges(res.data);
 
 }
@@ -35,7 +34,7 @@ getSavesMesssages();
 
  useEffect(()=>{
   globalSocket.current.on("get:message",(data)=>{
-  console.log(" get message--------")
+  
 if(data.senderId===user._id)
 setArrivalMessage({userid:data.senderId,username:data.senderUsername,userImg:data.senderImg,text:data.text,owner:true})
 
@@ -49,7 +48,7 @@ setArrivalMessage({userid:data.senderId,username:data.senderUsername,userImg:dat
 },[])
 
 useEffect(()=>{
-  console.log("arrival")
+ 
 setMesseges((old)=>[...old,arrivalMessage])
 
 },[arrivalMessage])
@@ -74,11 +73,11 @@ const handleClick=async(text)=>{
 
     })
 
-
+    charInput.current.value="";
    
 
 }
-console.log(messagess)
+
   return (
     <div className="globalContainer">
 

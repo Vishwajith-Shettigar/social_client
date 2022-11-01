@@ -2,6 +2,8 @@ import { Bookmark, Chat, Event, Group, HelpOutline, PlayArrow, PlayCircleFilledO
 import React from 'react'
 import Closefriend from '../closefriend/Closefriend'
 import "./sidebar.css"
+import { useNavigate } from 'react-router-dom'
+import PublicIcon from '@mui/icons-material/Public';
 import {Link} from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import {useState,useEffect,useContext} from 'react'
@@ -9,6 +11,7 @@ import axios from 'axios'
 function Sidebar({isGlobal,setIsglobal}) {
 const {user}=useContext(AuthContext)
    
+const navigate=useNavigate();
 const [recomUsers,setRecomusers]=useState([]);
 
 useEffect(()=>{
@@ -34,14 +37,14 @@ getRecom();
                         <RssFeed className='sidebarIcon' />
                         <span className='sidebarListItemText'>Feed</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li className="sidebarListItem" onClick={()=>{navigate("/messenger")}}>
 
                         <Chat className='sidebarIcon' />
                         <span className='sidebarListItemText'>Chats</span>
                     </li>
                     <li onClick={()=>setIsglobal(!isGlobal)} className="sidebarListItem">
 
-                        <PlayCircleFilledOutlined className='sidebarIcon' />
+                        <PublicIcon className='sidebarIcon' />
                         <span className='sidebarListItemText'>Global chat</span>
                   
                     </li>
