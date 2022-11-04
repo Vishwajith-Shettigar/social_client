@@ -25,6 +25,7 @@ const handleLogin=async(e)=>
             username:username.current.value,
             email:email.current.value,
             password:password.current.value
+            
            }
           try{
            const res=await axios.post("/auth/register",user);

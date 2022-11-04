@@ -27,9 +27,9 @@ const {user}=useContext(AuthContext);
     
 fetchPosts();
 
-  },[username,user._id])
+  },[username,user?._id])
 
-if(posts)
+if(posts && user)
   return (
     <div className='feedbar'>
 

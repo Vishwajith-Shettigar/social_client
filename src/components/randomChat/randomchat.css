@@ -1,0 +1,66 @@
+
+.rglobalContainer {
+    flex: 5.5;
+height: 90vh;
+margin-top: 15px;
+overflow-y: scroll;
+
+ margin-bottom: 90px;
+
+
+}
+
+
+
+.rglobal{
+    /* background-color: rgb(114, 145, 240); */
+   
+height:100%;
+
+    padding:2px;
+ 
+ 
+ 
+}
+.rglobalinputcenter{
+     display:relative;
+}
+
+.rglobalinputdiv{
+
+    align-self: center;
+    justify-self: center;
+    display: block;
+    bottom: 0px;
+    position:fixed;
+    padding:10px;
+    width:40vw;
+    
+  
+    /* width:100%; */
+   /* background-color: rgb(114, 145, 240); */
+  
+   
+  
+
+}
+
+
+.rinputsend{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.rinputglobal{
+    width: 100%;
+    padding:10px;
+}
+
+.rglobalsend{
+    padding:10px;
+}
+
+.rRandomSkip{
+    padding:10px;
+}

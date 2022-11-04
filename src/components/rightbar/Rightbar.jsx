@@ -43,7 +43,7 @@ console.log(homeOnlineusers)
   }
 
   const ProfileRightbar=()=>{
-    const [followed,setFollowed]=useState(currentUser.following.includes(user?._id));
+    const [followed,setFollowed]=useState(currentUser?.following?.includes(user?._id));
     const handleFollow=async()=>{
       try{
       
@@ -64,7 +64,7 @@ console.log(homeOnlineusers)
 
 
 useEffect(()=>{
-  setFollowed(currentUser.following.includes(user?._id))
+  setFollowed(currentUser?.following?.includes(user?._id))
   // currentUser.following.includes(user?.id)
 
 },[currentUser,user.id])
@@ -93,7 +93,7 @@ console.log(friends)
 
     return(
       <>
-      {user.username!=currentUser.username && (
+      {user?.username!=currentUser?.username && (
  <button className='rightbarFollowButton' onClick={handleFollow}>
   
   {followed? "Unfollow":"Follow"}
@@ -115,7 +115,7 @@ console.log(friends)
         </div>
         <div className="rightbarInfoItem">
           <span className="rightbarInfoKey">Relationship</span>
-          <span className="rightbarInfoValue"> {user.relationship===1?"single" :user.relationship===2? "married" :"---"}</span>
+          <span className="rightbarInfoValue"> {user.relationship==="1"?"single" :user.relationship==="2"? "married" :"---"}</span>
         </div>
        
       </div>

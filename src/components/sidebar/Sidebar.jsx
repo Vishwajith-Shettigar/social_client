@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import {useState,useEffect,useContext} from 'react'
 import axios from 'axios'
-function Sidebar({isGlobal,setIsglobal}) {
+function Sidebar({isGlobal,setIsglobal,isRandom,setIsRandom}) {
 const {user}=useContext(AuthContext)
    
 const navigate=useNavigate();
@@ -42,16 +42,16 @@ getRecom();
                         <Chat className='sidebarIcon' />
                         <span className='sidebarListItemText'>Chats</span>
                     </li>
-                    <li onClick={()=>setIsglobal(!isGlobal)} className="sidebarListItem">
+                    <li onClick={()=>{isRandom===true?setIsRandom(false)&&setIsglobal(true):setIsglobal(!isGlobal) }} className="sidebarListItem">
 
                         <PublicIcon className='sidebarIcon' />
                         <span className='sidebarListItemText'>Global chat</span>
                   
                     </li>
-                    <li className="sidebarListItem">
+                    <li onClick={()=>{isGlobal===true?setIsglobal(false)&&setIsRandom(true):setIsRandom(!isRandom) }} className="sidebarListItem">
 
                         <Group className='sidebarIcon' />
-                        <span className='sidebarListItemText'>Groups</span>
+                        <span className='sidebarListItemText'>Random Chat</span>
                     </li>
                     <li className="sidebarListItem">
 
