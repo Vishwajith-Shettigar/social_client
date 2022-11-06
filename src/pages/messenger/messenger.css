@@ -9,7 +9,7 @@
 }
 
 .chatMenu{
-    flex: 3.5;
+    flex: 3;
 }
 
 .charMenuInput{
@@ -72,7 +72,8 @@ margin-left: 10px;
 }
 
 .chatOnline{
-    flex:3
+    flex:3;
+   
 }
 
 .chatMenuWrappper,.chatBoxWrappper,.chatOnlineWrappper{
@@ -91,4 +92,13 @@ text-align: center;
 cursor: default;
 
 
+}
+@media screen and (max-width: 600px ) {
+    .noConversationText{
+font-size: 25px;
+/* position: relative; */
+z-index: -1;
+align-self: center;
+justify-self: center;
+    }
 }

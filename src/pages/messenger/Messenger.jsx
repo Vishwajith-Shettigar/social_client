@@ -7,18 +7,24 @@ import Topbar from '../../components/topbar/Topbar'
 import { AuthContext } from '../../context/AuthContext'
 import {io} from "socket.io-client"
 import "./messenger.css"
+import {globalinfo} from "../../App"
+import { Close } from '@mui/icons-material'
+
 function Messenger({socket}) {
+    const {mobile} = useContext(globalinfo)
     const [conversations,setConversations]=useState([]);
   const [currentChat,setCurrentChat]=useState(null);
   const [messeges,setMesseges]=useState(null);
   const [newMessage,setNewMessage]=useState();
 const [onlineUsers,setOnlineUsers]=useState()
-const [arrivalMessage,setArrivalMessage]=useState(null)
+const [arrivalMessage,setArrivalMessage]=useState(null);
+const [onConv,setOnConv]=useState(false);
 
 // const socket=useRef();
 const scrollRef=useRef();
     const {user}=useContext(AuthContext);
 
+    console.log("mobile" +mobile+"onconv"+onConv)
 useEffect(()=>{
 
 socket.current.on("getMessage",(data)=>{
@@ -123,7 +129,7 @@ scrollRef.current?.scrollIntoView({behaviour:"smooth"});
             <Topbar />
             <div className='messenger'>
 
-                <div className="chatMenu">
+          {mobile===true? onConv===false?  <div className="chatMenu">
 
                     <div className="chatMenuWrappper">
                         <input className='charMenuInput' placeholder='search your friends'></input>
@@ -131,19 +137,40 @@ scrollRef.current?.scrollIntoView({behaviour:"smooth"});
                       {  
                       
                       conversations.map((c)=>(
-                        <div  onClick={()=>setCurrentChat(c)}>
+                        <div  onClick={()=>{setCurrentChat(c) ; setOnConv(true)}}>
                          <Conversations conversation={c} currentUser={user}/>
                          </div>
                       ))
                      
                        }
                     </div>
-                </div>
-                <div className="chatBox">
+                </div>:<></>
 
+                :
+                <div className="chatMenu">
+
+
+                <div className="chatMenuWrappper">
+                    <input className='charMenuInput' placeholder='search your friends'></input>
+                   
+                  {  
+                  
+                  conversations.map((c)=>(
+                    <div  onClick={()=>{setCurrentChat(c) ; setOnConv(true)}}>
+                     <Conversations conversation={c} currentUser={user}/>
+                     </div>
+                  ))
+                 
+                   }
+                </div>
+            </div>
+
+                }
+                <div className="chatBox">
+              {mobile? onConv? <div onClick={()=>{setOnConv(false); console.log("clicked")}} style={{position:"fixed",padding:"10px",zIndex:"3"}}><Close /></div>:<></>:<></>}
                     <div className="chatBoxWrappper">
                         {
-                            currentChat?
+                            currentChat | onConv?
 <>
                             <div className="chatBoxTop">
                       {
@@ -171,12 +198,20 @@ scrollRef.current?.scrollIntoView({behaviour:"smooth"});
                   
                     </div>
                 </div>
-                <div className="chatOnline">
+              { mobile===true? onConv===false? <div className="chatOnline">
 
-                    <div className="chatOnlineWrappper">
-<Chatonline onlineUser={onlineUsers} currentId={user._id} setCurrentChat={setCurrentChat}/>
+                    <div className="chatOnlineWrappper" onClick={()=>{setOnConv(true)}}>
+<Chatonline  onlineUser={onlineUsers} currentId={user._id}   setCurrentChat={setCurrentChat}/>
                     </div>
                 </div>
+                :<></>
+                :
+                <div className="chatOnline">
+                    <div className="chatOnlineWrappper" onClick={()=>{setOnConv(true)}}>
+<Chatonline  onlineUser={onlineUsers} currentId={user._id} setCurrentChat={setCurrentChat}/>
+                    </div> 
+                    </div>
+                    }
 
             </div>
 

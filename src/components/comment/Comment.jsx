@@ -42,7 +42,7 @@ text.current.value=""
     return (
         <div className="commentBox">
 <div className="commentBoxInput">
-                <img className="commentCurrentUserImg" src={PF + "/person/1.jpeg"}></img>
+                <img className="commentCurrentUserImg" src={user.profilePicture?PF+"/person/"+user.profilePicture: PF+"/person/noAvatar.png"}></img>
                 <input className="commentInput" ref={text} placeholder="Write your comment "></input>
 
                 <Send className="CommentSend" onClick={addComment}  />
