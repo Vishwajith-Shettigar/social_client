@@ -1,0 +1,62 @@
+
+.globalContainer {
+    flex: 5.5;
+height: 90vh;
+margin-top: 15px;
+overflow-y: scroll;
+
+ margin-bottom: 90px;
+
+
+}
+
+
+
+.global{
+    /* background-color: rgb(114, 145, 240); */
+   
+height:100%;
+
+    padding:2px;
+ 
+ 
+ 
+}
+.globalinputcenter{
+     display:relative;
+}
+
+.globalinputdiv{
+
+    align-self: center;
+    justify-self: center;
+    display: block;
+    bottom: 0px;
+    position:fixed;
+    padding:10px;
+    width:40vw;
+    
+  
+    /* width:100%; */
+   /* background-color: rgb(114, 145, 240); */
+  
+   
+  
+
+}
+
+
+.inputsend{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.inputglobal{
+    width: 100%;
+    padding:10px;
+}
+
+.globalsend{
+    padding:10px;
+}

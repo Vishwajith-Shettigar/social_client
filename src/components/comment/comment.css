@@ -1,0 +1,91 @@
+.commentBox
+{
+    flex: 5.5;
+    height: auto;
+    margin-top: 15px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.commentBoxComment{
+    width: 95%;
+    height: auto;
+    display: flex;
+    margin-top:1px;
+    padding:10px;
+    align-items:center;
+   
+
+}
+
+.commentUserImg{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius:50%;
+    
+}
+
+.commentBoxUserInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    background-color:lightblue;
+    padding:10px;
+    border-radius:0px 10px 10px 20px;
+    padding-right: 13px;
+
+}
+
+.commentUsername{
+    font-weight: 500;
+    font-size:15px;
+    margin-bottom: 3px;
+}
+
+.commentBoxInput{
+    display: flex;
+    padding:6px;
+    width: 80%;
+    background-color:rgb(222, 225, 228);
+    border-radius:10px;
+    align-items:center;
+   justify-content:space-between;
+}
+
+.commentCurrentUserImg{
+    width:30px;
+    height:30px;
+    object-fit: cover;
+    border-radius:50%;
+    
+
+}
+.commentInput{
+  width:80%;
+  height:30px;
+  border-radius:10px;
+  border: none !important;
+}
+.comment{
+    max-width: 100%;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+@media screen and (max-width: 600px ) {
+
+.commentUsername{
+    font-size:10px
+}
+.comment{
+    font-size:12px; 
+}
+.commentBoxInput{
+    width:100%;
+}
+}

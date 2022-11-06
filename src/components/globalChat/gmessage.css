@@ -1,0 +1,91 @@
+.gmessage{
+    display: flex;
+    flex-direction: column;
+margin-top: 20px;
+z-index: -1;
+padding:10px;
+
+
+
+}
+
+.gmessageTop{
+    display: flex;
+    /* background-color:lightblue; */
+    width: 50%;
+    align-items: center;
+    justify-content: flex-end;
+
+    
+
+    
+}
+.gmessageTopfireign{
+    display: flex;
+    /* background-color:lightblue; */
+    width: 50%;
+    align-items: center;
+    justify-content: flex-start;
+}
+.gmessagebody{
+    
+    display:flex; 
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    padding-top:3px;
+    padding-bottom:2px;
+    border-radius:3px;
+    margin-right: 10px;
+    font-size:10px;
+     background-color: rgb(114, 145, 240);
+}
+
+.gmessageImg{
+    align-self: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+margin-right: 30px;
+
+
+}
+
+.gusername{
+    display: flex;
+   
+  
+    align-items: center;
+    justify-content: left;
+   
+color: rgb(224, 203, 203);
+max-width: 300px;
+width: 100%;
+word-break: break-all;
+white-space: pre-wrap;
+
+}
+
+.gmessageText{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+   
+   
+    background-color: rgb(114, 145, 240);
+color: white;
+max-width: 300px;
+width: 100%;
+word-break: break-all;
+white-space: pre-wrap;
+font-size:15px;
+/* height: fit-content; */
+}
+
+
+.gmessage.gown{
+    align-items: flex-end;
+    
+}
+
