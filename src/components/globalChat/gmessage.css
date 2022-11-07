@@ -89,3 +89,17 @@ font-size:15px;
     
 }
 
+@media screen and (max-width: 600px ) {
+    .gmessageTop{
+width:95%;
+    }
+    .gmessageTopfireign{
+
+width:95%;
+    }
+.gmessageText{
+
+    max-width:1000px;
+   
+}
+}

@@ -22,3 +22,18 @@ cursor: pointer;
     font-weight: 500;
     cursor: pointer;
 }
+
+@media screen and (max-width: 600px ) {
+    .conversationName{
+font-size: 10px;
+    }
+    .conversation{
+padding:4px;
+    }
+
+    .conversationImg{
+
+        width: 30px;
+        height: 30px;
+    }
+}

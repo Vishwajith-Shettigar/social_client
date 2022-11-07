@@ -1,5 +1,5 @@
 import { Cancel, EmojiEmotions, Label, NoAccountsOutlined, PermMedia, Room } from '@mui/icons-material'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState ,useEffect } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import "./share.css"
 import { useRef } from 'react'
@@ -11,6 +11,7 @@ function Share() {
     const {mobile}=useContext(globalinfo)
     const [file, setFile] = useState(null);
     const [Anonymous,setAnonymous] = useState(false)
+    const [fileExt,setfileExt]=useState("png")
 
   
     const desc = useRef();
@@ -22,7 +23,7 @@ function Share() {
 const handleSubmit=async(e)=>{
     
     e.preventDefault();
-if(desc.current.value){
+if(desc.current.value || file){
   
     
     const newPost={
@@ -64,6 +65,13 @@ else{
     window.alert("write")
 }
 }
+useEffect(()=>{
+    
+    if(file)
+    setfileExt( file.name.substring(file.name.lastIndexOf('.')+1, file.name.length) );
+
+},[file])
+
 
     return (
         <div className='share'>
@@ -78,7 +86,23 @@ else{
                     file &&(
 
                         <div className="shareImgContainer">
+                            {  (fileExt==="jpg" || fileExt==="png" || fileExt==="jpeg") ?
                             <img src={URL.createObjectURL(file)} alt="" className="shareImg" />
+                            :
+                            <></>
+                            }
+                            {
+                                fileExt==="mp4" ?
+                                <>
+                                 <video  alt="" className="shareImg"  controls>
+                                <source src={URL.createObjectURL(file)} type="video/mp4"/>
+                                </video>
+                                </>
+                                
+                                
+                                :
+                                <></>
+                            }
                             <Cancel className='shareCancelImg'  onClick={()=>{setFile(null)}}/>
                         </div>
                         

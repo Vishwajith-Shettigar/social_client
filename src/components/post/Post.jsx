@@ -13,9 +13,9 @@ const [user,setUser]=useState({});
 const {user:currentUser}=useContext(AuthContext);
 const [showMoreoptions,setShowMoreOptions]=useState(false);
 const [showComment,setShowComment]=useState(false);
+const [fileExt,setfileExt]=useState("png")
 
-
-
+console.log(post._id)
 
 const deletePost=async(postId,userId)=>{
 
@@ -70,6 +70,12 @@ try{
   }
 
 
+  useEffect(()=>{
+    if(post.img)
+    setfileExt( post.img.substring(post.img.lastIndexOf('.')+1, post.img.length) );
+  },[post])
+
+
 if(user)
   return (
     <div className='post'>
@@ -116,7 +122,23 @@ if(user)
       </div>
       <div className="postCenter" >
 <span className="postText">{post?.desc}</span>
-<img src={PF+"/post/"+post.img} alt="" className="postImg" />
+{
+  (fileExt==="jpg" || fileExt==="png" || fileExt==="jpeg") ?
+  
+  <img src={PF+"/post/"+post.img} alt="" className="postImg" />:fileExt==="mp4" ?
+<>
+ <video  alt="" className="postImg"  controls>
+<source src={PF+"/post/"+post.img} type="video/mp4"/>
+</video>
+</>
+
+
+:
+<></>
+
+
+}
+
       </div>
       <div className="postBottom">
 

@@ -93,7 +93,7 @@ const handleClick=async(text)=>{
       <div className="inputsend">
 
      
-          <input className="inputglobal" ref={charInput}></input>
+          <input className="inputglobal" ref={charInput} placeholder="Write something!"></input>
        <button className="globalsend" onClick={()=>handleClick(charInput.current.value)}>Send</button>
        </div>
          </div>

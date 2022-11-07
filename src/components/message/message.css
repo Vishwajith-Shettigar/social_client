@@ -44,3 +44,10 @@ white-space: pre-wrap;
     background-color: rgb(154, 80, 228);
     
 }
+
+@media screen and (max-width: 600px ) {
+.messageText{
+    font-size: 12px;
+}
+
+}

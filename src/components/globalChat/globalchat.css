@@ -50,6 +50,7 @@ height:100%;
      display: flex;
      align-items: center;
      justify-content: center;
+    
 }
 
 .inputglobal{
@@ -59,4 +60,31 @@ height:100%;
 
 .globalsend{
     padding:10px;
+}
+
+@media screen and (max-width: 600px ) {
+.globalinputdiv{
+    width: 95%;
+}
+.inputsend
+{
+width: 95%;
+
+z-index: 2;
+align-items: center;
+justify-content:space-between;
+
+}
+
+.inputglobal{
+    width: 100%;border-radius: 6px;
+   
+    border: 1px solid rgb(157, 146, 146);
+
+  
+}
+.globalsend{
+    background-color:rgb(102, 118, 238);
+    border: none;
+}
 }

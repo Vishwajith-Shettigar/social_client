@@ -193,7 +193,7 @@ scrollRef.current?.scrollIntoView({behaviour:"smooth"});
                     
                     </div>
                       </>
-                     :<span className='noConversationText'>Open a conversation</span>
+                     :<></>
                     }
                   
                     </div>
