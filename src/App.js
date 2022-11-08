@@ -55,7 +55,7 @@ useEffect(()=>{
 
  const loll=async()=>{
 
-      await randomSocket?.current.emit("make:diss",(user?._id))
+      await randomSocket?.current.emit("disconn",(user?._id))
     }
     if(!isRandom)
    loll();

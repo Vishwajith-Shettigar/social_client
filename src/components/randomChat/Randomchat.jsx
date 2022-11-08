@@ -8,6 +8,7 @@ import Gmessage from '../../components/globalChat/Gmessage'
 function RandomChat({randomSocket}) {
   
     const charInput=useRef();
+    const [connected,setConnected] =useState(false);
    
     const [messagess,setMesseges]=useState([]);
     const [partnerId,setPartnerId]=useState("null");
@@ -19,11 +20,14 @@ function RandomChat({randomSocket}) {
 
   
     useEffect( ()=>{
-    
+    if(connected===false)
       
-      randomSocket.current=io("ws://localhost:7000");
+{     
+  console.log("conected")
+  randomSocket.current=io("ws://localhost:7000");
       randomSocket.current.emit("adduser",user._id)
-
+      setConnected(true)
+}
   
   }
   
@@ -31,7 +35,7 @@ function RandomChat({randomSocket}) {
   
   
   
-  ,[])
+  ,[randomSocket])
     
  
 
