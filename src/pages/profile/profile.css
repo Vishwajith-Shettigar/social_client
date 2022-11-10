@@ -86,14 +86,16 @@ justify-content: center;
 }
 
 .Editcontainer{
+    background-color:rgb(16, 18, 19)!important; ;
+    color:white;
     width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
 padding-bottom: 10px;
 
-border: 1px solid rgb(234, 232, 232);
-background-color:rgb(255, 249, 249);
+/* border: 1px solid rgb(234, 232, 232); */
+/* background-color:rgb(255, 249, 249); */
 
 }
 
@@ -156,6 +158,7 @@ justify-content:space-between;
     font-size:10px;
    
    
+   
 }
 .radiocss{
     padding:0px;
@@ -167,5 +170,11 @@ justify-content:space-between;
 }
 .einput{
     font-size:12px;
+}
+.esenonc{
+    width:76px;
+    height:40px;
+    font-size: 17px;
+    
 }
 }
