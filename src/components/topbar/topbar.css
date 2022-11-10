@@ -2,12 +2,13 @@
 
     height: 50px;
     width: 100%;
-    background-color:#1877f2 ;
+    background-color:rgb(16, 18, 19) ;
     display: flex;
     align-items: center;
     position: sticky;
     top:0;
     z-index: 3;
+    /* color: rgb(29, 161, 242); */
 }
 
 .topbarleft{
@@ -20,12 +21,12 @@
 font-size: 24px;
 margin-left: 20px;
 font-weight: bold;
-color: white;
+color: rgb(29, 161, 242);
 cursor: pointer;
 }
 .topbarcenter{
     flex: 5;
-    
+   
 }
 
 .searchbar{
@@ -39,6 +40,7 @@ cursor: pointer;
 .searchIcon{
     font-size: 20px !important;
     margin-left: 10px;
+    background-color:white !important;
 
 }
 
@@ -48,6 +50,7 @@ cursor: pointer;
 
     border: none;
     width: 70%;
+    background-color:white !important;
 }
 
 .searchInput:focus{
@@ -59,20 +62,25 @@ cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    color: white;
+    color: white !important;
+   
    
 }
-
+.hamburgerLL{
+    color:white ;
+}
 .topbarlink{
 
     margin-right: 10px;
     font-size: 14px;
     cursor: pointer;
+    font-weight: 400;;
 
 }
 
 .topbaricons{
     display: flex;
+    
 
 }
 
@@ -88,7 +96,7 @@ cursor: pointer;
     height: 15px;
     background-color: red;
     border-radius: 50%;
-    color: White;
+ 
     position: absolute;
     top: -5px;
     right: -5px;
@@ -112,11 +120,13 @@ cursor: pointer;
     .topbarContainer{
 width: 100vw;
 margin-top:0px;
+padding-bottom: 10px;
 
     }
     .logo{
         font-size: 14px;
         margin-left: 10px;
+        
       
         }
         .topbarcenter{

@@ -4,4 +4,6 @@
     margin-top: 15px;
     overflow-y: scroll;
     z-index: 1;
+    background-color:rgb(16, 18, 19) ;
+    /* opacity: 0.9; */
 }

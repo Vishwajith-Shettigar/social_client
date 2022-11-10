@@ -24,7 +24,7 @@ if(user)
 
         {   
         mobile&&
-       <MenuIcon onClick={()=>{setShowSidebar(!showSidebar)}}/>
+       <MenuIcon className="hamburgerLL" onClick={()=>{setShowSidebar(!showSidebar)}}/>
 
         }
 <Link to={"/"}style={{textDecoration:"none"}} >
@@ -54,11 +54,11 @@ if(user)
         <div className="topbaricons">
           
           <div className="topbariconItem">
-<Link to="/messenger" style={{color:"white", textDecoration:"none"}}>
+<Link to="/messenger" style={{color:" rgb(29, 161, 242)", textDecoration:"none"}}>
     <Chat/>
 </Link>
           
-            <span className="topbarIconBadge">1</span>
+            <span className="topbarIconBadge"></span>
           </div>
           
         </div>

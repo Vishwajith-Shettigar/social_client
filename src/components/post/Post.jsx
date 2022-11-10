@@ -15,7 +15,7 @@ const [showMoreoptions,setShowMoreOptions]=useState(false);
 const [showComment,setShowComment]=useState(false);
 const [fileExt,setfileExt]=useState("png")
 
-console.log(post._id)
+
 
 const deletePost=async(postId,userId)=>{
 

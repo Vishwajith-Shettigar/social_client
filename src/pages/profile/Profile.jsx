@@ -277,13 +277,17 @@ window.location.reload(true)
   <img className='profileCoverImg' src={params.username=="anonymous"?PF+"/person/noCover.png": user.coverPicture? PF+"/person/"+user.coverPicture: PF+"/person/noCover.png"}/>
         
         <img className='profileUserImg' src={params.username=="anonymous"?PF+"/person/noAvatar.png":  user.profilePicture? PF+"/person/"+user.profilePicture : PF+"/person/noAvatar.png"}/>
-      
+   
 </div> 
- {
-          currentUser?._id===user?._id && <div className="editProfile" ><CreateIcon className="editButton" onClick={()=>{console.log("lol"); setIsEdit(!isEdit)}}/></div> 
-        }
+
 <div className="profileInfo">
+
+   {
+          currentUser?._id===user?._id && <div className="editProfile" ><CreateIcon className="editButton" onClick={()=>{console.log("lol"); setIsEdit(!isEdit)}}/></div> 
+        } 
   <h4 className='profileInfoName'>{params.username=="anonymous"?"Anonymous":user.username}</h4>
+  
+
   <span className='profileInfoDesc'>{params.username=="anonymous"?"Hey am anonymous i am little shy about to share my story thats why, hope you understand <3":user.desc}</span>
 </div>
         

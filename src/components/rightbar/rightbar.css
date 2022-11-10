@@ -2,6 +2,7 @@
     flex: 3.5;
     overflow-y: scroll;
     height: 90vh;
+    color: white;
 }
 
 ::-webkit-scrollbar{
@@ -22,7 +23,10 @@
     background-color: rgb(184, 184, 184);
 }
 
-
+.rightbarFollowingName{
+    color: rgb(29, 161, 242);
+    font-weight: bold;
+}
 
 .rightbarWrapper{
 padding: 20px 20px 0px 10px ;

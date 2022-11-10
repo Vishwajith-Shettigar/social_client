@@ -62,26 +62,10 @@ getRecom();
                         <Bookmark className='sidebarIcon' />
                         <span className='sidebarListItemText'>Bookmarks</span>
                     </li>
-                    <li className="sidebarListItem">
+                   
+                  
+                    
 
-                        <HelpOutline className='sidebarIcon' />
-                        <span className='sidebarListItemText'>Questions</span>
-                    </li>
-                    <li className="sidebarListItem">
-
-                        <WorkOutline className='sidebarIcon' />
-                        <span className='sidebarListItemText'>Jobs</span>
-                    </li>
-                    <li className="sidebarListItem">
-
-<Event className='sidebarIcon' />
-<span className='sidebarListItemText'>Events</span>
-</li>
-<li className="sidebarListItem">
-
-<School className='sidebarIcon' />
-<span className='sidebarListItemText'>Courses</span>
-</li>
                 </ul>
                { 
                

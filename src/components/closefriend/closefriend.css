@@ -3,6 +3,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    color: white;
+   /* font-size:1px; */
+   font-weight: 500 !important;
 
 }
 
