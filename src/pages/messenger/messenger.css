@@ -4,7 +4,8 @@
 
     display: flex;
     z-index: 0;
-
+    color: rgb(29, 161, 242);
+    background-color:rgb(16, 18, 19) ;
 
 }
 
@@ -14,9 +15,10 @@
 
 .charMenuInput{
     width: 90%;
-    padding: 10px 0;
+    padding: 10px 4px;
     border: none;
     border-bottom: 1px solid gray;
+    border-radius:5px;
 }
 
 .chatBox{

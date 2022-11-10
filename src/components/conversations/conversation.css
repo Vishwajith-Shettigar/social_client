@@ -3,10 +3,11 @@
     align-items: center;
     padding: 10px;
     margin-top: 20px;
+    
 
 }
 .conversation:hover{
-    background-color: rgb(251, 238, 238);
+    background-color: rgb(129, 125, 125);
 }
 
 .conversationImg{
