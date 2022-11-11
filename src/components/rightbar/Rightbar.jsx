@@ -23,10 +23,10 @@ console.log(homeOnlineusers)
     return(
       <>
       <div className="birthdayContainer">
-        <img src="/assets/gift.png" className='birthdayImg'/>
-        <span className='birthdayTest'><b>Pola</b> and <b>3 others</b>  have birthday today </span>
+        {/* <img src="/assets/gift.png" className='birthdayImg'/>
+        <span className='birthdayTest'><b>Pola</b> and <b>3 others</b>  have birthday today </span> */}
   </div> 
-  <img src="/assets/ad.png" alt="" className="rightbarAd" />
+  {/* <img src="/assets/ad.png" alt="" className="rightbarAd" /> */}
   <h4 className="rightbarTitle">Online friends</h4>
 
   <ul className="rightbarFriendList">

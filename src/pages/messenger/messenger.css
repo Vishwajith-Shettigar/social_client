@@ -1,11 +1,12 @@
 .messenger{
 
-    height:  90vh;
+    height:  100vh;
 
     display: flex;
     z-index: 0;
     color: rgb(29, 161, 242);
     background-color:rgb(16, 18, 19) ;
+    margin: 0;;
 
 }
 
@@ -14,7 +15,7 @@
 }
 
 .charMenuInput{
-    width: 90%;
+    width:90%;
     padding: 10px 4px;
     border: none;
     border-bottom: 1px solid gray;
@@ -53,7 +54,7 @@ width: 80%;
 height: 20px;
 padding:10px ;
 border: none;
-
+border-radius: 20px;
 max-width: 80%;
 }
 .chatMessageInput:focus{
@@ -96,6 +97,7 @@ cursor: default;
 
 }
 @media screen and (max-width: 600px ) {
+    
     .noConversationText{
 font-size: 25px;
 /* position: relative; */

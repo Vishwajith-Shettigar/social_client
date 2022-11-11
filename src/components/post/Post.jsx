@@ -7,6 +7,7 @@ import {Users} from "../../dummyData"
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthContext'
 import Comment from '../comment/Comment'
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 function Post({post,owner}) {
 const PF=process.env.REACT_APP_PUBLIC_FOLDER;
 const [user,setUser]=useState({});
@@ -85,7 +86,7 @@ if(user)
 
 
 
-  <Link to={`profile/${post.anonymous?"anonymous": user.username}`}>
+  <Link to={`/profile/${post.anonymous?"anonymous": user.username}`}>
 
 
 
@@ -100,9 +101,11 @@ if(user)
   {
     showMoreoptions?  owner==false ? (
 
-      <div className="sharepostOptions">
+      <div className="sharepostOptions" >
+      
+       <ShareOutlined className="sharePostOptionsicons" onClick={()=>{ console.log("share"); navigator.clipboard.writeText("http://localhost:3000/post/"+post._id)}}/>
        
-        <ShareOutlined className="sharePostOptionsicons"/>
+       
       </div>
       
     )
@@ -121,6 +124,7 @@ if(user)
 </div>
       </div>
       <div className="postCenter" >
+        <Link to={`/post/${post._id}`} style={{textDecoration:"none",color:"white", cursor: "pointer"}}>
 <span className="postText">{post?.desc}</span>
 {
   (fileExt==="jpg" || fileExt==="png" || fileExt==="jpeg") ?
@@ -138,7 +142,8 @@ if(user)
 
 
 }
-
+</Link>
+     
       </div>
       <div className="postBottom">
 
@@ -156,6 +161,7 @@ if(user)
       </div>
    { showComment? <Comment comment={post.comments} postid={post._id}  postUserid={post.userid}/>:<></>}
     </div>
+    
     </div>
   )
 }

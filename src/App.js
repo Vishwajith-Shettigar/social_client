@@ -109,6 +109,29 @@ function App() {
               )
             }
           ></Route>
+
+<Route
+            exact
+            path="/post/:postid"
+            element={
+              user ? (
+                <Home
+                  singlePost={true}
+                  mobile={mobile}
+                  randomSocket={randomSocket}
+                  homeOnlineusers={homeOnlineusers}
+                  isGlobal={isGlobal}
+                  setIsglobal={setIsglobal}
+                  isRandom={isRandom}
+                  setIsRandom={setIsRandom}
+                  removeCookie={removeCookie}
+                />
+              ) : (
+                <Register />
+              )
+            }
+          ></Route>
+
           <Route
             path="/login"
             element={

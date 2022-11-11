@@ -40,6 +40,7 @@
         overflow-x: auto;
         border-radius: 10px;
         padding: 10px;
+        color: white;
 
 
 }
@@ -125,7 +126,7 @@
 }
 .anonymousOption{
 
-    background-color:rgb(190, 186, 186);
+   
     padding:3px;
     border-radius:10px;
     outline:none ;
@@ -133,7 +134,7 @@
 }
 
 .anonymousOption:focus{
-    outline:none;
+    outline:none; background-color:rgb(190, 186, 186);
 }
 
 @media screen and (max-width: 600px ) {
@@ -142,6 +143,7 @@
 }
 .shareOptionText{
     font-size:12px;
+   
 }
 .shareProfileImg
 {

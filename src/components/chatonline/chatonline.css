@@ -4,6 +4,7 @@
     font-weight: 500;
     cursor: pointer;
     margin-top: 10px;
+   
 
 }
 .chatonlineImgContainer{
@@ -28,11 +29,13 @@
     height: 33px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    
 }
 @media screen and (max-width: 600px ) {
 .chatonlineName{
 font-size:10px;
+color:white;
 
 }
 

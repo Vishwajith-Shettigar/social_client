@@ -7,9 +7,11 @@ import Rightbar from '../../components/rightbar/Rightbar';
 import Feed from '../../components/feed/Feed';
 import Globalchat from '../../components/globalChat/Globalchat';
 import Randomchat from '../../components/randomChat/Randomchat'
+import SFeed from '../../components/singlepost/SFeed';
 import {useContext} from 'react'
 import {globalinfo} from '../../App'
-function Home({ randomSocket,homeOnlineusers,isGlobal,setIsglobal,isRandom,setIsRandom,removeCookie}) {
+function Home({singlePost, randomSocket,homeOnlineusers,isGlobal,setIsglobal,isRandom,setIsRandom,removeCookie}) {
+
 
   
   const {mobile,showSidebar}=useContext(globalinfo)
@@ -26,7 +28,7 @@ function Home({ randomSocket,homeOnlineusers,isGlobal,setIsglobal,isRandom,setIs
    }
 
   { 
-    isGlobal || isRandom ? isGlobal? <Globalchat/> :<Randomchat randomSocket={randomSocket}/>:<Feed/> 
+    isGlobal || isRandom ? isGlobal? <Globalchat/> :<Randomchat randomSocket={randomSocket}/>: singlePost?<SFeed /> :<Feed/> 
    
   }
 

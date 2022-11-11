@@ -8,6 +8,7 @@ const PF=process.env.REACT_APP_PUBLIC_FOLDER;
     const [friends,setFriends]=useState([]);
 
     const [onlineFriends,setOnlineFriends]=useState([])
+    const [offlineFriends,setOfflineFriends]=useState([])
 
 
     useEffect(()=>{
@@ -24,10 +25,7 @@ const PF=process.env.REACT_APP_PUBLIC_FOLDER;
 
 
 useEffect(()=>{
-    console.log("friends")
-    console.log(friends)
-    console.log("onlineUser")
-    console.log(onlineUser)
+   
  onlineUser&& setOnlineFriends(friends.filter((f)=> 
    
 onlineUser.includes(f._id)
@@ -35,6 +33,10 @@ onlineUser.includes(f._id)
    
 ))
 
+onlineUser&& setOfflineFriends(friends.filter((f)=>
+    
+   !( onlineUser.includes(f._id))
+    ))
 
 },[friends,onlineUser])
 
@@ -57,6 +59,7 @@ console.log(e)
 
  if(onlineFriends)
   return (
+    <>
     <div className='chatonline'>
 
 
@@ -78,6 +81,29 @@ console.log(e)
 }
 
     </div>
+
+<div className='chatonline'>
+
+
+{
+    offlineFriends.map((o)=>(
+          <div className="chatonlineFriend" onClick={()=>handleClick(o)} >
+    <div className="chatonlineImgContainer">
+        <img src={o.profilePicture? PF+"/person/"+o.profilePicture :PF+"/person/noAvatar.png"} alt="" className="chatonlineImg" />
+        <div className="chatonlineBadgeoffline">
+
+        </div>
+    </div>
+    <span className="chatonlineName">
+       {o?.username}
+    </span>
+</div>
+    ))
+  
+}
+
+    </div>
+    </>
   )
 }
 

@@ -132,7 +132,7 @@ scrollRef.current?.scrollIntoView({behaviour:"smooth"});
           {mobile===true? onConv===false?  <div className="chatMenu">
 
                     <div className="chatMenuWrappper">
-                        <input className='charMenuInput' placeholder='search your friends'></input>
+                        {/* <input className='charMenuInput' placeholder='search your friends'></input> */}
                        
                       {  
                       
