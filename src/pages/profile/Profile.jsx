@@ -225,11 +225,11 @@ window.location.reload(true)
 
           <div className="ediv">
             <span className="einput">Profile picture</span>
-          <input type="file" className="einput" accept=".png,.jpeg,.jpg,.mp4" onChange={(e) => { setPFile(e.target.files[0]) }}></input>
+          <input type="file" className="einput" accept=".png,.jpeg,.jpg,.webp" onChange={(e) => { setPFile(e.target.files[0]) }}></input>
           </div>
           <div className="ediv">
             <span className="einput">Cover Picture</span>
-          <input type="file" className="einput" accept=".png,.jpeg,.jpg,.mp4" onChange={(e) => { setCFile(e.target.files[0]) }}></input>
+          <input type="file" className="einput" accept=".png,.jpeg,.jpg,.webp" onChange={(e) => { setCFile(e.target.files[0]) }}></input>
           </div>
           <div className="ediv">
             <span className="einput">city</span>

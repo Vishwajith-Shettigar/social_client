@@ -86,13 +86,13 @@ useEffect(()=>{
                     file &&(
 
                         <div className="shareImgContainer">
-                            {  (fileExt==="jpg" || fileExt==="png" || fileExt==="jpeg") ?
+                            {  (fileExt==="jpg" || fileExt==="png" || fileExt==="jpeg" || fileExt==="webp" ) ?
                             <img src={URL.createObjectURL(file)} alt="" className="shareImg" />
                             :
                             <></>
                             }
                             {
-                                fileExt==="mp4" ?
+                                fileExt==="mp4" || fileExt==="gif" ?
                                 <>
                                  <video  alt="" className="shareImg"  controls>
                                 <source src={URL.createObjectURL(file)} type="video/mp4"/>
@@ -115,7 +115,7 @@ useEffect(()=>{
                         <label htmlFor='file' className="shareOption">
                             <PermMedia htmlColor='tomato' className='shareIcon' />
                             <span className="shareOptionText">Photo or video</span>
-                            <input style={{ display: "none" }} id="file" type="file" accept=".png,.jpeg,.jpg,.mp4" onChange={(e) => { setFile(e.target.files[0]) }} />
+                            <input style={{ display: "none" }} id="file" type="file" accept=".png,.jpeg,.jpg,.mp4,.webp" onChange={(e) => { setFile(e.target.files[0]) }} />
                         </label>
                         <div contenteditable="true"  className={Anonymous? "shareOption anonymousOption":"shareOption"}  onClick={Anonymoushandle}>
                             <NoAccountsOutlined htmlColor='blue' contenteditable="false" className='shareIcon' />

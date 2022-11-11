@@ -134,9 +134,9 @@ if(user)
         <Link to={`/post/${post._id}`} style={{textDecoration:"none",color:"white", cursor: "pointer"}}>
 <span className="postText">{post?.desc}</span>
 {
-  (fileExt==="jpg" || fileExt==="png" || fileExt==="jpeg") ?
+  (fileExt==="jpg" || fileExt==="png" || fileExt==="jpeg" || fileExt==="webp" ) ?
   
-  <img src={PF+"/post/"+post.img} alt="" className="postImg" />:fileExt==="mp4" ?
+  <img src={PF+"/post/"+post.img} alt="" className="postImg" />:fileExt==="mp4" || fileExt==="gif" ?
 <>
  <video  alt="" className="postImg"  controls>
 <source src={PF+"/post/"+post.img} type="video/mp4"/>
