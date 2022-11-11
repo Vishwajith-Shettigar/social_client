@@ -34,7 +34,13 @@
     border-radius: 50%;
     object-fit: cover;
 }
-
+.CopiedText{
+    color: rgb(6, 5, 5);
+    padding: 3px;;
+    background-color:greenyellow;
+    border-radius: 10px;
+    font-size:13px;
+}
 .postUserName{
     font-size: 15px;
     font-weight: 500;

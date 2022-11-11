@@ -11,6 +11,7 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 function Post({post,owner}) {
 const PF=process.env.REACT_APP_PUBLIC_FOLDER;
 const [user,setUser]=useState({});
+const [iscopy,setIscopy]=useState(false);
 const {user:currentUser}=useContext(AuthContext);
 const [showMoreoptions,setShowMoreOptions]=useState(false);
 const [showComment,setShowComment]=useState(false);
@@ -98,12 +99,18 @@ if(user)
 </div>
 <div className="postTopRight">
   <MoreVert className="threedot" onClick={showMore}/>
+
+
   {
     showMoreoptions?  owner==false ? (
 
       <div className="sharepostOptions" >
-      
-       <ShareOutlined className="sharePostOptionsicons" onClick={()=>{ console.log("share"); navigator.clipboard.writeText("http://localhost:3000/post/"+post._id)}}/>
+     { (iscopy)?
+      <span className="CopiedText">copied</span>:<></>
+  
+
+      }
+       <ShareOutlined className="sharePostOptionsicons" onClick={()=>{ setIscopy(true); setTimeout(()=>setIscopy(false),2000) ;navigator.clipboard.writeText("http://localhost:3000/post/"+post._id)}}/>
        
        
       </div>
