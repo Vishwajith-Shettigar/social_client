@@ -46,13 +46,13 @@ getRecom();
                         <Chat className='sidebarIcon' />
                         <span className='sidebarListItemText'>Chats</span>
                     </li>
-                    <li onClick={()=>{isRandom===true?setIsRandom(false)&&setIsglobal(true):setIsglobal(!isGlobal) }} className="sidebarListItem">
+                    <li onClick={()=>{isRandom===true?setIsRandom(false)&&setIsglobal(true):setIsglobal(!isGlobal) }} className={ isGlobal ?"sidebarListItem focusTab":"sidebarListItem"}>
 
                         <PublicIcon className='sidebarIcon' />
-                        <span className='sidebarListItemText'>Global chat</span>
+                        <span className={ isGlobal ? 'sidebarListItemText ':"sidebarListItemText"}>Global chat</span>
                   
                     </li>
-                    <li onClick={()=>{isGlobal===true?setIsglobal(false)&&setIsRandom(true):setIsRandom(!isRandom) }} className="sidebarListItem">
+                    <li onClick={()=>{isGlobal===true?setIsglobal(false)&&setIsRandom(true):setIsRandom(!isRandom) }} className={ isRandom ?"sidebarListItem focusTab":"sidebarListItem"}>
 
                         <Group className='sidebarIcon' />
                         <span className='sidebarListItemText'>Random Chat</span>
