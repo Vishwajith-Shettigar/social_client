@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/social_client/tree/dark/static/css/main.62569784.css",
-    "main.js": "/social_client/tree/dark/static/js/main.4920505b.js",
-    "index.html": "/social_client/tree/dark/index.html",
-    "main.62569784.css.map": "/social_client/tree/dark/static/css/main.62569784.css.map",
-    "main.4920505b.js.map": "/social_client/tree/dark/static/js/main.4920505b.js.map"
+    "main.css": "/social_client/static/css/main.62569784.css",
+    "main.js": "/social_client/static/js/main.4920505b.js",
+    "index.html": "/social_client/index.html",
+    "main.62569784.css.map": "/social_client/static/css/main.62569784.css.map",
+    "main.4920505b.js.map": "/social_client/static/js/main.4920505b.js.map"
   },
   "entrypoints": [
     "static/css/main.62569784.css",
