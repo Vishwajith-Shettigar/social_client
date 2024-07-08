@@ -86,8 +86,8 @@ function App() {
   }, [jwtToken.userId]);
 
   return (
+    <Router basename={process.env.PUBLIC_URL}>
     <globalinfo.Provider value={{ mobile, setShowSidebar, showSidebar }}>
-      <Router>
         <Routes>
           <Route
             exact
@@ -179,8 +179,9 @@ function App() {
             }
           ></Route>
         </Routes>
-      </Router>
+      
     </globalinfo.Provider>
+    </Router>
   );
 }
 
