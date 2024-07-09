@@ -168,12 +168,12 @@ function Post({ post, owner }) {
             <div className="postBottomLeft">
               <img
                 className="likeIcon"
-                src="/assets/like.png"
+                src="social_client/assets/like.png"
                 onClick={handleLike}
               />
               <img
                 className="likeIcon"
-                src="/assets/heart.png"
+                src="social_client/assets/heart.png"
                 onClick={handleLike}
               />
               <span className="postLikeCounter">{like}</span>
