@@ -64,7 +64,6 @@ function App() {
 
   useEffect(() => {
     if (user) {
-      // console.log("userrr")
       socket.current.emit("adduser", user._id);
       socket.current.on("getUsers", (users) => {
         setHomeOnlineUsers(
