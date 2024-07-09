@@ -24,7 +24,6 @@ var loginCall = function loginCall(userCredential, dispatch, setJwtToken) {
 
         case 4:
           res = _context.sent;
-          console.log("Log in ---------->" + res);
           dispatch({
             type: "LOGIN_SUCCESS",
             payload: res.data
@@ -32,23 +31,23 @@ var loginCall = function loginCall(userCredential, dispatch, setJwtToken) {
           setJwtToken("userId", res.data._id, {
             maxAge: 172800
           });
-          _context.next = 13;
+          _context.next = 12;
           break;
 
-        case 10:
-          _context.prev = 10;
+        case 9:
+          _context.prev = 9;
           _context.t0 = _context["catch"](1);
           dispatch({
             type: "LOGIN_FAILURE",
             payload: _context.t0
           });
 
-        case 13:
+        case 12:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[1, 10]]);
+  }, null, null, [[1, 9]]);
 };
 
 exports.loginCall = loginCall;
