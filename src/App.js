@@ -77,7 +77,7 @@ function App() {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get("/user?userid=" + jwtToken.userId);
+        const res = await axios.get(process.env.REACT_APP_API_URL+"/user?userid=" + jwtToken.userId);
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       } catch (e) {}
     };

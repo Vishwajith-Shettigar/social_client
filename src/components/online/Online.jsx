@@ -9,7 +9,7 @@ const [user,setUser]=useState();
   useEffect(()=>{
  
     const getOnlineUsers=async()=>{
- const res=await axios.get("/user?userid="+userOnline);
+ const res=await axios.get(process.env.REACT_APP_API_URL+"/user?userid="+userOnline);
  setUser(res.data)
 
     }

@@ -10,7 +10,7 @@ useEffect(() =>{
   console.log("hoo")
   const getuserImg=async() =>{
 
-    const res=await axios.get("/user?userid="+message.sender)
+    const res=await axios.get(process.env.REACT_APP_API_URL+"/user?userid="+message.sender)
    
  
     setImg(res.data.profilePicture)

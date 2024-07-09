@@ -17,7 +17,7 @@ function Globalchat() {
         globalSocket.current=io("ws://localhost:8000");
 const getSavesMesssages=async()=>{
 
-const res= await axios.get("/globalm/");
+const res= await axios.get(process.env.REACT_APP_API_URL+"/globalm/");
 
 setMesseges(res.data);
 
@@ -56,7 +56,7 @@ setMesseges((old)=>[...old,arrivalMessage])
 
 const handleClick=async(text)=>{
 
-   await axios.post("/globalm/",{
+   await axios.post(process.env.REACT_APP_API_URL+"/globalm/",{
     userid:user._id,
                 username:user.username,
                 userImg:user.profilePicture,

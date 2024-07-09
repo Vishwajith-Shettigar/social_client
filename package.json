@@ -48,7 +48,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://socialapi-env.eba-8a296arx.ap-south-1.elasticbeanstalk.com/api/",
   "devDependencies": {
     "gh-pages": "^6.1.1"
   }

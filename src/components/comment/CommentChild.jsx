@@ -13,7 +13,7 @@ function CommentChild({c,postUserid,postid,commentsPNow,setCommentsPNow}) {
 
 const deleteComment=async()=>{
     
-  const res=  await axios.post("/post/deleteComment/"+postid,{
+  const res=  await axios.post(process.env.REACT_APP_API_URL+"/post/deleteComment/"+postid,{
 
         userid:user._id,
 postuserid:postUserid,
@@ -23,7 +23,7 @@ commentid:commentsNow._id
 
    
 
-    const cmnts=  await axios.get("/post/getComments/"+postid)
+    const cmnts=  await axios.get(process.env.REACT_APP_API_URL+"/post/getComments/"+postid)
    
     await  setCommentsNow(cmnts.data)
    
@@ -35,8 +35,7 @@ commentid:commentsNow._id
         
        
         const fetchuser = async() => {
-//  console.log(comment.userid);
-            const res = await axios.get(`/user?userid=${commentsNow.userid}`)
+            const res = await axios.get(process.env.REACT_APP_API_URL+`/user?userid=${commentsNow.userid}`)
             setCommentUser(res.data);
             
         }

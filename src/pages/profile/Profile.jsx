@@ -51,8 +51,9 @@ const params=useParams();
     }
     else{
   const fetchUser=async()=>{
-   
-  const res=  await axios.get(`/user?username=${params.username}`)
+    console.log("Fetching user...");
+   console.log( process.env.REACT_APP_API_URL)
+  const res=  await axios.get(process.env.REACT_APP_API_URL+`/user?username=${params.username}`)
   
     setUser(res.data);
    
@@ -130,7 +131,7 @@ console.log(data.file)
 
 
 try{
-  await axios.post("/upload",data);
+  await axios.post(process.env.REACT_APP_API_URL+"/upload",data);
 
 }catch(e)
 {
@@ -156,7 +157,7 @@ console.log(data.file)
 
 
 try{
-  await axios.post("/upload",data);
+  await axios.post(process.env.REACT_APP_API_URL+"/upload",data);
 
 }catch(e)
 {
@@ -166,7 +167,7 @@ try{
 
 try{
 
-const res=await axios.post("/user/"+user._id,updatedUser)
+const res=await axios.post(process.env.REACT_APP_API_URL+"/user/"+user._id,updatedUser)
 console.log(res.data)
 if(eusername.current.value)
 navigate("/profile/"+eusername.current.value)

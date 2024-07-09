@@ -44,7 +44,7 @@ if(desc.current.value || file){
     
 
       try{
-        await axios.post("/upload",data);
+        await axios.post(process.env.REACT_APP_API_URL+"/upload",data);
 
       }catch(e)
       {
@@ -54,7 +54,7 @@ if(desc.current.value || file){
 
     try{
 
- await axios.post("/post",newPost);
+ await axios.post(process.env.REACT_APP_API_URL+"/post",newPost);
 window.location.reload()
     }catch(e)
     {

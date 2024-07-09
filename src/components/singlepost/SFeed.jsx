@@ -15,7 +15,7 @@ const {user}=useContext(AuthContext);
     
  const fetchPosts=async()=>{
  console.log()
-  const res=  await axios.get(`/post/${queryparams.postid}`)
+  const res=  await axios.get(process.env.REACT_APP_API_URL+`/post/${queryparams.postid}`)
 
     setPosts(res.data)
    

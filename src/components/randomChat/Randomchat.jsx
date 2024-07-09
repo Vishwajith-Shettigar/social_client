@@ -2,7 +2,6 @@ import React from 'react'
 import './randomchat.css'
 import { useRef, useEffect, useState, useContext } from 'react'
 import { io } from 'socket.io-client';
-import axios from 'axios'
 import { AuthContext } from '../../context/AuthContext'
 import Gmessage from '../../components/globalChat/Gmessage'
 function RandomChat({ randomSocket }) {

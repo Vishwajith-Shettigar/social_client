@@ -18,7 +18,7 @@ function Comment({ comment,postid,postUserid }) {
 
     const getCommentsnew=async()=>{
 
-  const res=  await axios.get("/post/getComments/"+postid);
+  const res=  await axios.get(process.env.REACT_APP_API_URL+"/post/getComments/"+postid);
 
   setCommentsNow(res.data);
     }
@@ -30,8 +30,8 @@ function Comment({ comment,postid,postUserid }) {
    
   
 
-    const res=await axios.post("/post/comment/"+postid,{userid:user._id,text:text.current.value});
-     const cmnts=  await axios.get("/post/getComments/"+postid)
+    const res=await axios.post(process.env.REACT_APP_API_URL+"/post/comment/"+postid,{userid:user._id,text:text.current.value});
+     const cmnts=  await axios.get(process.env.REACT_APP_API_URL+"/post/getComments/"+postid)
    
  await  setCommentsNow(cmnts.data)
 

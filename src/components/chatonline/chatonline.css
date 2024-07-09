@@ -1,42 +1,35 @@
-.chatonlineFriend{
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 10px;
-   
-
+.chatonlineFriend {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
 }
-.chatonlineImgContainer{
-    position: relative;
-    margin-right: 10px;
-
+.chatonlineImgContainer {
+  position: relative;
+  margin-right: 10px;
 }
 
-.chatonlineBadge{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    position: absolute;
-    background-color: limegreen;
-    top:0;
-    right: 0;
-
+.chatonlineBadge {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: limegreen;
+  top: 0;
+  right: 0;
 }
 
-.chatonlineImg{
-    width: 33px;
-    height: 33px;
-    border-radius: 50%;
-    object-fit: cover;
-    /* border: 1px solid white; */
-    
+.chatonlineImg {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 1px solid white; */
 }
-@media screen and (max-width: 600px ) {
-.chatonlineName{
-font-size:10px;
-color:white;
-
-}
-
+@media screen and (max-width: 600px) {
+  .chatonlineName {
+    font-size: 10px;
+    color: white;
+  }
 }

@@ -49,10 +49,10 @@ console.log(homeOnlineusers)
       
        if(!followed){
         dispatch({type:"FOLLOW",payload:user._id})
-        await axios.put("/user/"+user._id+"/follow",{userid:currentUser._id})
+        await axios.put(process.env.REACT_APP_API_URL+"/user/"+user._id+"/follow",{userid:currentUser._id})
        }else{
         dispatch({type:"UNFOLLOW",payload:user._id})
-        await axios.put("/user/"+user._id+"/unfollow",{userid:currentUser._id})
+        await axios.put(process.env.REACT_APP_API_URL+"/user/"+user._id+"/unfollow",{userid:currentUser._id})
       
        }
       }catch(e)
@@ -77,7 +77,7 @@ const [friends,setFriends]=useState([]);
    const getFriends= async()=>{
 
      try{
- const friendList=await axios.get("/user/friends/"+user._id)
+ const friendList=await axios.get(process.env.REACT_APP_API_URL+"/user/friends/"+user._id)
  setFriends(friendList.data)
      }catch(e)
      {

@@ -22,7 +22,7 @@ useEffect(()=>{
     const getRecom=async()=>{
 
 
-        const res=await axios.get("/user/getuserrecom/"+user._id);
+        const res=await axios.get(process.env.REACT_APP_API_URL+"/user/getuserrecom/"+user._id);
        
         setRecomusers(res.data)
 

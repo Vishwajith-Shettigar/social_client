@@ -63,7 +63,7 @@ useEffect(()=>{
         const getConversation=async()=>{
 try{
     
-    const res=await axios.get("/conversation/"+user._id)
+    const res=await axios.get(process.env.REACT_APP_API_URL+"/conversation/"+user._id)
    
     setConversations(res.data);
 }catch(e)
@@ -79,7 +79,7 @@ try{
 useEffect(()=>{
 const getMesseges=async()=>{
 try{
-    const res=await axios.get("/message/"+currentChat?._id)
+    const res=await axios.get(`${process.env.REACT_APP_API_URL}/message/`+currentChat?._id)
     setMesseges(res.data);
 }
 catch(e)
@@ -108,7 +108,7 @@ socket.current.emit("sendMessage",{
 })
 
 try{
-    const res=await axios.post("/message",message);
+    const res=await axios.post(`${process.env.REACT_APP_API_URL}/message/`,message);
     setMesseges([...messeges,res.data])
     setNewMessage("")
 

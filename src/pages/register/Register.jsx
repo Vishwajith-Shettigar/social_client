@@ -28,7 +28,7 @@ const handleLogin=async(e)=>
             
            }
           try{
-           const res=await axios.post("/auth/register",user);
+           const res=await axios.post(process.env.REACT_APP_API_URL+"/auth/register",user);
 navigate("/login")
           }
 
