@@ -1,4 +1,11 @@
 ## Live at https://vishwajith-shettigar.github.io/social_client
+(Note : visit above link and go to site settings, and allow Insecure content)
+
+![Screenshot 2024-07-10 114844](https://github.com/Vishwajith-Shettigar/social_client/assets/76042077/340c1bb1-8d41-4c80-ae4d-27dd7997f0d7)
+
+![Screenshot 2024-07-10 114852](https://github.com/Vishwajith-Shettigar/social_client/assets/76042077/668c0963-0c64-442c-8ff8-b62df8204806)
+
+![Screenshot 2024-07-10 114453](https://github.com/Vishwajith-Shettigar/social_client/assets/76042077/3d46000a-758c-418f-95d0-5f120741be1a)
 
 # Getting Started with Create React App
 
