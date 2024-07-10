@@ -1,5 +1,5 @@
 ## Live at https://vishwajith-shettigar.github.io/social_client
-(Note : visit above link and go to site settings, and allow Insecure content. This is needed, becauses api used by the client doesn't have ssl certificate.)
+(Note : visit above link and go to site settings, and allow Insecure content. This is needed, because the api used by the client doesn't have ssl certificate.)
 
 ![Screenshot 2024-07-10 114844](https://github.com/Vishwajith-Shettigar/social_client/assets/76042077/340c1bb1-8d41-4c80-ae4d-27dd7997f0d7)
 
